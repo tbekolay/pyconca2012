@@ -1,0 +1,93 @@
+% Copyright 2011 by Trevor Bekolay
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\newdimen\beamer@sideframewidth
+\newdimen\beamer@headheight
+\usebeamerfont{frametitle}
+\beamer@sideframewidth=0.15cm
+\beamer@headheight=0pt
+\reset@font
+
+\def\beamer@sidebarside{right}
+
+\DeclareOptionBeamer{width}{\beamer@sideframewidth=#1}
+\DeclareOptionBeamer{height}{\beamer@headheight=#1}
+\ExecuteOptionsBeamer{right}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\def\beamer@sidebarformat#1#2#3{%
+  \begin{beamercolorbox}[wd=\beamer@sideframewidth,leftskip=#1,rightskip=1ex plus1fil,vmode]{#2}
+    \vbox{}%
+    #3\par%
+    \vbox{}%
+    \vskip-1.5ex%
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{section in sidebar}{microframes theme}
+{%
+  \vbox{%
+    \vskip-1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar}{\insertfillcircle}%
+  }%
+}
+
+\defbeamertemplate*{section in sidebar shaded}{microframes theme}
+{%
+  \vbox{%
+    \vskip-1ex%
+    \beamer@sidebarformat{3pt}{section in sidebar shaded}{\insertcircle}%
+  }%
+}
+
+\defbeamertemplate*{subsection in sidebar}{microframes theme}
+{%
+  \beamer@sidebarformat{5pt}{subsection in sidebar}{\insertfillcircle}%
+}
+
+\defbeamertemplate*{subsection in sidebar shaded}{microframes theme}
+{%
+  \beamer@sidebarformat{5pt}{subsection in sidebar shaded}{\insertcircle}%
+}
+
+\defbeamertemplate*{subsubsection in sidebar}{microframes theme}
+{%
+  \beamer@sidebarformat{7pt}{subsubsection in sidebar}{\insertfillcircle}%
+}
+
+\defbeamertemplate*{subsubsection in sidebar shaded}{microframes theme}
+{%
+  \beamer@sidebarformat{7pt}{subsubsection in sidebar shaded}{\insertcircle}%
+}
+
+
+\ifdim\beamer@sideframewidth>0pt
+
+                                % Sidebar
+  \usebeamercolor{palette primary}
+  \setbeamercolor*{sidebar right}{fg=black,bg=}
+  \setbeamersize{sidebar width \beamer@sidebarside=\beamer@sideframewidth}
+  \defbeamertemplate*{sidebar \beamer@sidebarside}{microframes theme}
+  {
+    \beamer@tempdim=\beamer@sideframewidth%
+    \advance\beamer@tempdim by -6pt%
+    \vskip1ex%
+    \insertverticalnavigation{\beamer@sideframewidth}%
+    \vfill
+    \usebeamercolor{normal text}%
+    \llap{\insertframenumber{}\hspace*{1ex}}%
+    \vskip3.0ex%
+  }%
+  
+                                % Margins
+  \setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
+\fi
+
+\mode
+<all>

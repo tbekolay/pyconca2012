@@ -1,0 +1,23 @@
+% Copyright 2011 by Trevor Bekolay
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+
+\DeclareOptionBeamer{height}{\PassOptionsToPackage{height=#1}{beamerouterthemesideframes}}
+\DeclareOptionBeamer{width}{\PassOptionsToPackage{width=#1}{beamerouterthemesideframes}}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\setbeamertemplate{frametitle}[default][center]
+
+\useoutertheme{sideframes}
+\useinnertheme{shadows}
+\usecolortheme{orchid}
+\usecolortheme{whale}
+
+\mode
+<all>
+
