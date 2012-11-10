@@ -3,7 +3,7 @@ Writing self-documenting scientific code using physical quantities
 :author: Trevor Bekolay
 :date: Presented on November 10, 2012
 
-The compile slides are available as a download
+The compiled slides are available as a download
 `here <https://github.com/downloads/tbekolay/pyconca2012/slides.pdf>`_.
 LaTeX sources for the slides are in `latex-src`,
 and figures are in `figures`.
