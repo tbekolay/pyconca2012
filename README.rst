@@ -4,7 +4,8 @@ Writing self-documenting scientific code using physical quantities
 :date: Presented on November 10, 2012
 
 If you check out one thing, let it be the
-[tutorial in the iPython notbeook viewer](http://nbviewer.ipython.org/urls/raw.github.com/tbekolay/pyconca2012/master/QuantitiesTutorial.ipynb)!
+`tutorial in the iPython notbeook viewer
+<http://nbviewer.ipython.org/urls/raw.github.com/tbekolay/pyconca2012/master/QuantitiesTutorial.ipynb>`_!
 
 The compiled slides are available as a download
 `here <https://github.com/downloads/tbekolay/pyconca2012/slides.pdf>`_.
